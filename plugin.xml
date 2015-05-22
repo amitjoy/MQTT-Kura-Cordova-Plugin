@@ -35,7 +35,6 @@
         <param name="android-package" value="org.pluginporo.mqtt.KuraPosition" />
         <param name="android-package" value="org.pluginporo.mqtt.MessageListener" />
         <param name="android-package" value="org.pluginporo.mqtt.MQTTClientDemo" />
-        <param name="android-package" value="org.pluginporo.mqtt.MqttPlugin-Backup" />
         <param name="android-package" value="org.pluginporo.mqtt.SimpleMQTTClient" />
       </feature>
     </config-file>
@@ -54,7 +53,7 @@
     <source-file src="src/android/KuraPosition.java" target-dir="src/org/pluginporo/mqtt" />
     <source-file src="src/android/MessageListener.java" target-dir="src/org/pluginporo/mqtt" />
     <source-file src="src/android/MQTTClientDemo.java" target-dir="src/org/pluginporo/mqtt" />
-    <source-file src="src/android/MqttPlugin-Backup.java" target-dir="src/org/pluginporo/mqtt" />
+    <source-file src="src/android/MqttPlugin.java.bak" target-dir="src/org/pluginporo/mqtt" />
     <source-file src="src/android/SimpleMQTTClient.java" target-dir="src/org/pluginporo/mqtt" />
 
   </platform>
