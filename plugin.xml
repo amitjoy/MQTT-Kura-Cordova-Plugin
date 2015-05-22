@@ -42,7 +42,7 @@
     <source-file src="src/android/libs/mqtt-client-1.10.jar" target-dir="libs" framework="true" />
     <source-file src="src/android/libs/protobuf-java-2.6.1.jar" target-dir="libs" framework="true"/>
     <source-file src="src/android/libs/slf4j-api-1.7.12.jar" target-dir="libs" framework="true"/>
-    <source-file src="src/android/libs/hawtbuf-1.11.jar" target-dir="libs" framework="true"/>
+    <source-file src="src/android/libs/hawtbuf-1.10.jar" target-dir="libs" framework="true"/>
     
     <source-file src="src/android/MqttPlugin.java" target-dir="src/org/pluginporo/mqtt" />
     <source-file src="src/android/GZipUtil.java" target-dir="src/org/pluginporo/mqtt" />
