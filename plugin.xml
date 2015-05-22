@@ -10,7 +10,7 @@
   <description>MQTT Plugin</description>
   <license>Apache 2.0</license>
   <keywords>cordova, mqtt</keywords>
-  <value>org.pluginporo.mqtt_plugin</value>
+  <value>org.pluginporo.mqtt.MqttPlugin</value>
 
   <engines>
     <engine name="cordova" version=">=3.4.0"/>
