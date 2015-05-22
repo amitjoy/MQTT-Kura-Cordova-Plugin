@@ -46,6 +46,16 @@
     <source-file src="src/android/libs/slf4j-api-1.7.12.jar" target-dir="libs" />
     
     <source-file src="src/android/MqttPlugin.java" target-dir="src/org/pluginporo/mqtt" />
+    <source-file src="src/android/GZipUtil.java" target-dir="src/org/pluginporo/mqtt" />
+    <source-file src="src/android/KuraPayload.java" target-dir="src/org/pluginporo/mqtt" />
+    <source-file src="src/android/KuraPayloadDecoder.java" target-dir="src/org/pluginporo/mqtt" />
+    <source-file src="src/android/KuraPayloadEncoder.java" target-dir="src/org/pluginporo/mqtt" />
+    <source-file src="src/android/KuraPayloadProto.java" target-dir="src/org/pluginporo/mqtt" />
+    <source-file src="src/android/KuraPosition.java" target-dir="src/org/pluginporo/mqtt" />
+    <source-file src="src/android/MessageListener.java" target-dir="src/org/pluginporo/mqtt" />
+    <source-file src="src/android/MQTTClientDemo.java" target-dir="src/org/pluginporo/mqtt" />
+    <source-file src="src/android/MqttPlugin-Backup.java" target-dir="src/org/pluginporo/mqtt" />
+    <source-file src="src/android/SimpleMQTTClient.java" target-dir="src/org/pluginporo/mqtt" />
 
   </platform>
 
