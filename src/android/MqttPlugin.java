@@ -21,7 +21,6 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 import org.apache.cordova.CordovaActivity;
 
-import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,21 +31,11 @@ import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.IntentFilter;
 
-import org.eclipse.paho.client.mqttv3.MqttCallback;
-import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
-import org.eclipse.paho.client.mqttv3.MqttDeliveryToken;
-import org.eclipse.paho.client.mqttv3.MqttException;
-import org.eclipse.paho.client.mqttv3.MqttMessage;
-import org.eclipse.paho.client.mqttv3.MqttTopic;
-
 public class MqttPlugin extends CordovaPlugin {
 
     private static final String LOG_TAG = "MqttPlugin";
 
     CallbackContext pluginCallbackContext = null;
-    MqttClient client = null;
-    MqttConnectOptions connOpt;
 
     String clientID = null;
     String brokerUrl = null;
