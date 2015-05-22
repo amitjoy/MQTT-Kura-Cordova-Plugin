@@ -27,6 +27,16 @@
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="MqttPlugin">
         <param name="android-package" value="org.pluginporo.mqtt.MqttPlugin" />
+        <param name="android-package" value="org.pluginporo.mqtt.GZipUtil" />
+        <param name="android-package" value="org.pluginporo.mqtt.KuraPayload" />
+        <param name="android-package" value="org.pluginporo.mqtt.KuraPayloadDecoder" />
+        <param name="android-package" value="org.pluginporo.mqtt.KuraPayloadEncoder" />
+        <param name="android-package" value="org.pluginporo.mqtt.KuraPayloadProto" />
+        <param name="android-package" value="org.pluginporo.mqtt.KuraPosition" />
+        <param name="android-package" value="org.pluginporo.mqtt.MessageListener" />
+        <param name="android-package" value="org.pluginporo.mqtt.MQTTClientDemo" />
+        <param name="android-package" value="org.pluginporo.mqtt.MqttPlugin-Backup" />
+        <param name="android-package" value="org.pluginporo.mqtt.SimpleMQTTClient" />
       </feature>
     </config-file>
 
