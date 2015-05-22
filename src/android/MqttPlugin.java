@@ -35,20 +35,16 @@ public class MqttPlugin extends CordovaPlugin {
 
     private static final String LOG_TAG = "MqttPlugin";
 
-    CallbackContext pluginCallbackContext = null;
+    private CallbackContext pluginCallbackContext = null;
 
-    String clientID = null;
-    String brokerUrl = null;
-    String userName = null;
-    String password = null;
-    String m_publishData = null;
-    String m_topic = null;
+    private String clientID = null;
+    private String brokerUrl = null;
+    private String userName = null;
+    private String password = null;
+    private String m_publishData = null;
+    private String m_topic = null;
 
-    static SimpleMQTTClient s_simpleClient = null;
-
-    static {
-        s_simpleClient = new SimpleMQTTClient("m11.cloudmqtt.org", "ankur", "rvigfsyx", "ifCTVLo5YlP9");
-    }
+    private static SimpleMQTTClient s_simpleClient = new SimpleMQTTClient("m11.cloudmqtt.org", "ankur", "rvigfsyx", "ifCTVLo5YlP9");
 
     // args = [url, username, password, clientID, topic]
     @Override
@@ -129,7 +125,6 @@ public class MqttPlugin extends CordovaPlugin {
         return sw.getBuffer().toString();
     }
 
-    // url, username, password, clientID, topic
     private void setOpts(JSONArray args) throws JSONException {
         /*this.brokerUrl = (String) args.get(0);
         this.userName = (String) args.get(1);
