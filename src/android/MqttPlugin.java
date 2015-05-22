@@ -40,9 +40,9 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.MqttTopic;
 
-public class MqttKuraPlugin extends CordovaPlugin {
+public class MqttPlugin extends CordovaPlugin {
 
-    private static final String LOG_TAG = "MqttKuraPlugin";
+    private static final String LOG_TAG = "MqttPlugin";
 
     CallbackContext pluginCallbackContext = null;
     MqttClient client = null;
