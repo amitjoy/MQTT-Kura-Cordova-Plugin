@@ -4,7 +4,7 @@
   id="org.pluginporo.mqtt_plugin" 
   version="0.0.1">
 
-  <name>MQTT Plugin</name>
+  <name>MqttPlugin</name>
   <description>MQTT Plugin</description>
   <license>Apache 2.0</license>
   <keywords>cordova, mqtt</keywords>
