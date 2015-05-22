@@ -9,6 +9,12 @@
   <license>Apache 2.0</license>
   <keywords>cordova, mqtt</keywords>
 
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/mqtt_plugin.js" target="js/mqtt_plugin.js">
+
   <js-module src="www/mqtt_plugin.js" name="MqttPlugin">
     <clobbers target="navigator.mqtt_plugin" />
   </js-module>
