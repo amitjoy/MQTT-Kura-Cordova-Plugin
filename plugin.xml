@@ -39,7 +39,6 @@
       </feature>
     </config-file>
 
-    <source-file src="src/android/libs/paho-mqtt-client-1.0.1.jar" target-dir="libs" />
     <source-file src="src/android/libs/mqtt-client-1.10.jar" target-dir="libs" />
     <source-file src="src/android/libs/protobuf-java-2.6.1.jar" target-dir="libs" />
     <source-file src="src/android/libs/slf4j-api-1.7.12.jar" target-dir="libs" />
@@ -53,7 +52,6 @@
     <source-file src="src/android/KuraPosition.java" target-dir="src/org/pluginporo/mqtt" />
     <source-file src="src/android/MessageListener.java" target-dir="src/org/pluginporo/mqtt" />
     <source-file src="src/android/MQTTClientDemo.java" target-dir="src/org/pluginporo/mqtt" />
-    <source-file src="src/android/MqttPlugin.java.bak" target-dir="src/org/pluginporo/mqtt" />
     <source-file src="src/android/SimpleMQTTClient.java" target-dir="src/org/pluginporo/mqtt" />
 
   </platform>
