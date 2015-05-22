@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" 
   id="org.pluginporo.mqtt_plugin" 
   version="0.0.1">
 
@@ -21,27 +21,9 @@
 
   <!-- android -->
   <platform name="android">
-    <config-file target="AndroidManifest.xml" parent="/*">
-      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-      <uses-permission android:name="android.permission.INTERNET" />
-      <uses-permission android:name="android.permission.READ_LOGS" />
-      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-      <uses-permission android:name="android.permission.VIBRATE" />
-    </config-file>
-
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="MqttPlugin">
         <param name="android-package" value="org.pluginporo.mqtt.MqttPlugin" />
-        <param name="android-package" value="org.pluginporo.mqtt.GZipUtil" />
-        <param name="android-package" value="org.pluginporo.mqtt.KuraPayload" />
-        <param name="android-package" value="org.pluginporo.mqtt.KuraPayloadDecoder" />
-        <param name="android-package" value="org.pluginporo.mqtt.KuraPayloadEncoder" />
-        <param name="android-package" value="org.pluginporo.mqtt.KuraPayloadProto" />
-        <param name="android-package" value="org.pluginporo.mqtt.KuraPosition" />
-        <param name="android-package" value="org.pluginporo.mqtt.MessageListener" />
-        <param name="android-package" value="org.pluginporo.mqtt.MQTTClientDemo" />
-        <param name="android-package" value="org.pluginporo.mqtt.SimpleMQTTClient" />
       </feature>
     </config-file>
 
