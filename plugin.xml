@@ -55,7 +55,8 @@
     <source-file src="src/android/KuraPosition.java" target-dir="src" />
     <source-file src="src/android/MessageListener.java" target-dir="src" />
     <source-file src="src/android/MQTTClientDemo.java" target-dir="src" />
-    <source-file src="src/android/SimpleMQTTClient.java" target-dir="src" />
+    <source-file src="src/android/KuraMQTTClient.java" target-dir="src" />
+    <source-file src="src/android/IKuraMQTTClient.java" target-dir="src" />
 
   </platform>
 
