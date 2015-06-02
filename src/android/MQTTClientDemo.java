@@ -13,49 +13,74 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package org.pluginporo.mqtt;
 
-import java.io.UnsupportedEncodingException;
+import com.google.common.base.Charsets;
 
-public class MQTTClientDemo {
+public final class MQTTClientDemo {
 
-	public static void main(String[] args) {
+	public static void main(String... args) {
 
-		final SimpleMQTTClient sc = new SimpleMQTTClient("iot.eclipse.org");
-		final String CONF_REQUEST_TOPIC = "$EDC/administrator/AMIT/CONF-V1/GET/configurations/de.tum.in.hvac.HVAC";
-		final String CONF_RESPONSE_TOPIC = "$EDC/administrator/AMIT_083027868/CONF-V1/REPLY/55361535117";
-		final String HVAC_REQUEST_TOPIC = "$EDC/administrator/AMIT/HVAC-V1/GET/configurations";
-		final String HVAC_RESPONSE_TOPIC = "$EDC/administrator/AMIT_083027868/HVAC-V1/REPLY/55361535117";
-		final String BUNDLE_REQUEST_TOPIC = "$EDC/administrator/AMIT/DEPLOY-V1/GET/bundles";
-		final String BUNDLE_RESPONSE_TOPIC = "$EDC/administrator/AMIT_083027868/DEPLOY-V1/REPLY/55361535117";
+		// Create the connection object
+		// In the mobile application, the client should not know the username
+		// and password until it gets verified with the identity server and the
+		// server will provide the mobile client with the username and password
+		// to connect to the broker
+		// The client id would always be one randomly generated id for one
+		// mobile client
+		// but there will be a specific user for identity server and IoT Gateway
+		// to connect to the message broker
+		// First the client will ask (using REST call) Identity Server for
+		// credential to connect
+		// to message broker and the server checks its database if the user is
+		// validated, then it will return the credential for that user to
+		// connect to the message broker and the client will use it for further
+		// usages. Once it is done, the client will scan QR code to add newly
+		// purchased IoT Home Automation Gateway Solution
+		final IKuraMQTTClient client = new KuraMQTTClient.Builder()
+				.setHost("m20.cloudmqtt.com").setPort("11143")
+				.setClientId("CLIENT_1294378").setUsername("user@email.com")
+				.setPassword("iotiwbiot").build();
 
-		sc.subscribe(CONF_RESPONSE_TOPIC, new MessageListener() {
+		// Connect to the Message Broker
+		final boolean status = client.connect();
+		System.out.println(status);
 
-			@Override
-			public void processMessage(KuraPayload payload) {
-				try {
-					System.out.println(new String(payload.getBody(), "UTF-8"));
-				} catch (final UnsupportedEncodingException e) {
-					e.printStackTrace();
+		// Declare the topics
+		final String CONF_REQUEST_TOPIC = "$EDC/TUM/B8:27:EB:A6:A9:8A/BLUETOOTH-V1/GET/configurations";
+		final String CONF_RESPONSE_TOPIC = "$EDC/TUM/CLIENT_1294378/BLUETOOTH-V1/REPLY/55361535117";
+
+		// Subscribe to the topic first
+		if (status)
+			client.subscribe(CONF_RESPONSE_TOPIC, new MessageListener() {
+
+				@Override
+				public void processMessage(KuraPayload payload) {
+					System.out.println(new String(payload.getBody(),
+							Charsets.UTF_8));
 				}
-			}
-		});
+			});
 
+		// Then publish the message
 		final KuraPayload payload = new KuraPayload();
+		// Request Id will always be randomly generated for each and every MQTT
+		// request
 		payload.addMetric("request.id", "55361535117");
-		payload.addMetric("requester.client.id", "AMIT_083027868");
+		payload.addMetric("requester.client.id", "CLIENT_1294378");
 
-		sc.publish(CONF_REQUEST_TOPIC, payload);
+		if (status)
+			client.publish(CONF_REQUEST_TOPIC, payload);
 
 		System.out.println("Subscribed to channels "
-				+ sc.getSubscribedChannels());
+				+ client.getSubscribedChannels());
 
 		System.out.println("Waiting for new messages");
 
+		// The threadding is done for the sake of this example but in real-life
+		// scenario, you don't need this
 		while (!Thread.currentThread().isInterrupted()) {
 		}
 
-		sc.disconnect();
+		// Finally disconnect
+		client.disconnect();
 	}
-
 }

@@ -13,10 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package org.pluginporo.mqtt;
 
+/**
+ * Used to listen to MQTT Messages
+ * 
+ * @author AMIT KUMAR MONDAL
+ *
+ */
 public interface MessageListener {
 
+	/**
+	 * Callback after client receives a message
+	 */
 	public void processMessage(KuraPayload payload);
 
 }

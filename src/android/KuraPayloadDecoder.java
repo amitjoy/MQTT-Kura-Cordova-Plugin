@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package org.pluginporo.mqtt;
 
 import java.io.IOException;
 import java.util.Date;
@@ -24,6 +23,12 @@ import org.slf4j.LoggerFactory;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 
+/**
+ * Used to decode Google Proto Buffer encoded MQTT message
+ * 
+ * @author AMIT KUMAR MONDAL
+ *
+ */
 public class KuraPayloadDecoder {
 	private static final Logger s_logger = LoggerFactory
 			.getLogger(KuraPayloadDecoder.class);

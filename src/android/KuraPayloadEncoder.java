@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package org.pluginporo.mqtt;
 
 import java.io.IOException;
 
@@ -24,6 +23,8 @@ import com.google.protobuf.ByteString;
 
 /**
  * Encodes an KuraPayload class using the Google ProtoBuf binary format.
+ * 
+ * @author AMIT KUMAR MONDAL
  */
 public class KuraPayloadEncoder {
 	private static final Logger s_logger = LoggerFactory

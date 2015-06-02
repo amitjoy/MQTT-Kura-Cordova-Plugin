@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package org.pluginporo.mqtt;
+
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -21,6 +21,12 @@ import java.io.IOException;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
+/**
+ * MQTT Message GZip Encoder
+ * 
+ * @author AMIT KUMAR MONDAL
+ *
+ */
 public class GZipUtil {
 
 	public static boolean isCompressed(byte[] bytes) throws IOException {
